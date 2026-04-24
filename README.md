@@ -22,7 +22,7 @@
 - 重大改进：Y+1（次版本）
 - 里程碑完成：X+1（主版本）
 
-## Subagents（7个）
+## Subagents（8个）
 
 | Agent | 职责 | 触发条件 |
 |-------|------|----------|
@@ -31,7 +31,8 @@
 | `logic-verifier` | 用代码验证算法/业务逻辑 | 涉及算法/复杂逻辑时 |
 | `ui-verifier` | 用组件树验证 UI/交互 | 涉及复杂 UI 时 |
 | `flow-verifier` | 用流程图验证业务流程 | 涉及业务流程时 |
-| `quality-checker` | 检查质量 + 批判性挖掘 + 测试用例设计 | 每次都需要 |
+| `test-designer` | 设计完整测试用例 | 每次都需要 |
+| `quality-checker` | 文档质量检查 + 测试用例交叉验证 | 每次都需要 |
 | `task-breaker` | 拆成 2-3 级任务（Markdown checkbox） | 需要任务拆解时 |
 
 ## Subagent 调用约定
@@ -60,7 +61,8 @@ spec-forge/
 │   ├── logic-verifier.md         # 算法验证（代码草图）
 │   ├── ui-verifier.md            # UI 验证（组件树）
 │   ├── flow-verifier.md          # 流程验证（Mermaid 图）
-│   ├── quality-checker.md        # 质量检查 + 批判性思考 + 测试用例
+│   ├── test-designer.md          # 测试用例设计
+│   ├── quality-checker.md        # 质量检查 + 交叉验证
 │   └── task-breaker.md           # 任务拆解（Markdown checkbox）
 └── references/
     └── spec-template.md          # SPEC 标准模板
