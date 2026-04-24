@@ -112,12 +112,14 @@ SPEC-FORGE 是一个反应式循环系统，每一轮迭代都会：
                     ↓           ↓
                FAIL           PASS
                     ↓           ↓
-     根据问题触发       进入下一阶段
-     logic/ui/flow
+     根据问题类型触发对应 agent：
+     - 文档问题 → requirement-drafter
+     - 测试用例问题 → test-designer
+     - 算法问题 → logic-verifier
+     - UI问题 → ui-verifier
+     - 流程问题 → flow-verifier
           ↓
-     verifier 处理
-          ↓
-     quality-checker 复查
+     处理完成后 → quality-checker 复查
           ↓
      版本号 +1 (Z+1)
           ↓
