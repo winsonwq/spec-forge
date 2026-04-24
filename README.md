@@ -22,15 +22,16 @@
 - 重大改进：Y+1（次版本）
 - 里程碑完成：X+1（主版本）
 
-## Subagents（6个）
+## Subagents（7个）
 
 | Agent | 职责 | 触发条件 |
 |-------|------|----------|
+| `project-analyzer` | 分析现有项目技术架构 | 用户有现有项目时 |
 | `requirement-drafter` | 把模糊想法写成结构化 SPEC | 每次都需要 |
 | `logic-verifier` | 用代码验证算法/业务逻辑 | 涉及算法/复杂逻辑时 |
 | `ui-verifier` | 用组件树验证 UI/交互 | 涉及复杂 UI 时 |
 | `flow-verifier` | 用流程图验证业务流程 | 涉及业务流程时 |
-| `quality-checker` | 检查质量 + 批判性挖掘潜在问题 | 每次都需要 |
+| `quality-checker` | 检查质量 + 批判性挖掘 + 测试用例设计 | 每次都需要 |
 | `task-breaker` | 拆成 2-3 级任务（Markdown checkbox） | 需要任务拆解时 |
 
 ## Subagent 调用约定
@@ -54,11 +55,12 @@ spec-forge/
 ├── SKILL.md                      # 顶层编排器（含 intake + reactive loop）
 ├── README.md                     # 本文件
 ├── agents/
+│   ├── project-analyzer.md       # 项目技术架构分析
 │   ├── requirement-drafter.md    # 需求起草
 │   ├── logic-verifier.md         # 算法验证（代码草图）
 │   ├── ui-verifier.md            # UI 验证（组件树）
 │   ├── flow-verifier.md          # 流程验证（Mermaid 图）
-│   ├── quality-checker.md        # 质量检查 + 批判性思考
+│   ├── quality-checker.md        # 质量检查 + 批判性思考 + 测试用例
 │   └── task-breaker.md           # 任务拆解（Markdown checkbox）
 └── references/
     └── spec-template.md          # SPEC 标准模板
